@@ -25,11 +25,15 @@ class GameMines extends JFrame {
     boolean youWon, bangMine;
     int bangX, bangY;
 
+    /**
+     * create game window
+     * @param args
+     */
     public static void main(String[] args) {
         new GameMines();
     }
 
-    GameMines() { //создание игрового окна
+    GameMines() {
         setTitle(TITLE_OF_PROGRAM);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(START_LOCATION_X, START_LOCATION_Y, FIELD_SIZE * BLOCK_SIZE + FIELD_DX, FIELD_SIZE * BLOCK_SIZE + FIELD_DY);
