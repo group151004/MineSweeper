@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.util.*;
 import java.util.Timer;
 
+
 class GameMines extends JFrame {
 
     final String TITLE_OF_PROGRAM = "MineSweeper";
@@ -29,7 +30,7 @@ class GameMines extends JFrame {
         new GameMines();
     }
 
-    GameMines() { //создание игрового окна
+    public GameMines() {
         setTitle(TITLE_OF_PROGRAM);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(START_LOCATION_X, START_LOCATION_Y, FIELD_SIZE * BLOCK_SIZE + FIELD_DX, FIELD_SIZE * BLOCK_SIZE + FIELD_DY);
@@ -76,7 +77,7 @@ class GameMines extends JFrame {
     }
 
     void initField() {
-        int x, y, countMines = 0; //создание игрового поля
+        int x, y, countMines = 0;
         for (x = 0; x < FIELD_SIZE; x++)
             for (y = 0; y < FIELD_SIZE; y++)
                 field[y][x] = new Cell();
@@ -107,7 +108,7 @@ class GameMines extends JFrame {
                 }
     }
 
-    class Cell {
+    public class Cell {
         private int countBombNear;
         private boolean isOpen, isMine, isFlag;
 
@@ -162,7 +163,7 @@ class GameMines extends JFrame {
         }
     }
 
-    class TimerLabel extends JLabel {
+    public class TimerLabel extends JLabel {
         Timer timer = new Timer();
 
         TimerLabel() { timer.scheduleAtFixedRate(timerTask, 0, 1000); }
@@ -183,7 +184,7 @@ class GameMines extends JFrame {
         void stopTimer() { timer.cancel(); }
     }
 
-    class Canvas extends JPanel {
+    public class Canvas extends JPanel {
         @Override
         public void paint(Graphics g) {
             super.paint(g);
